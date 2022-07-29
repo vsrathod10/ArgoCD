@@ -20,7 +20,7 @@ spec:
       selfHeal: true
       prune: true
       allowEmpty: true
-  syncOptions:
+    syncOptions:
     - CreateNamespace=true
     - PrunePropagationPolicy=foreground
  
