@@ -15,13 +15,12 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: guestbook
-  #syncPolicy:
-  #  automated:
-  #    selfHeal: true
-  #    prune: true
-  #    allowEmpty: true
-  #syncOptions:
-  #  - CreateNamespace=true
-  #  - PrunePropagationPolicy=foreground
   syncPolicy:
-    automated: {}
+    automated:
+      selfHeal: true
+      prune: true
+      allowEmpty: true
+  syncOptions:
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground
+ 
