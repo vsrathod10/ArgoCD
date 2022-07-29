@@ -1,1 +1,27 @@
 
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-test
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: xentral
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: guestbook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: guestbook-test
+  #syncPolicy:
+  #  automated:
+  #    selfHeal: true
+  #    prune: true
+  #    allowEmpty: true
+  #syncOptions:
+  #  - CreateNamespace=true
+  #  - PrunePropagationPolicy=foreground
+  syncPolicy:
+    automated: {}
