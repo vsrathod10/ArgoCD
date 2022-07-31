@@ -14,3 +14,7 @@ spec:
     path: argocd/my-apps/app-1
     repoURL: https://github.com/vsrathod10/ArgoCD.git
     targetRevision: HEAD
+    syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
