@@ -8,8 +8,8 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: ArgoCD/argocd/argocd-apps
-    repoURL: 'https://gitlab.com/ayush-sharma/example-assets.git'
+    path: argocd/argocd-apps
+    repoURL: 'https://github.com/vsrathod10/ArgoCD.git'
     targetRevision: HEAD
   project: default
   syncPolicy:
